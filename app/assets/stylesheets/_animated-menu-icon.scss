@@ -1,0 +1,61 @@
+.navbar-menu-button {
+  display:  inline-block;
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.navbar-menu-button span {
+  margin: 0 auto;
+  position: relative;
+  top: 10px;
+}
+
+.navbar-menu-button span:before, .navbar-menu-button span:after {
+  content: '';
+  position: absolute;
+}
+
+.navbar-menu-button span, .navbar-menu-button span:before, .navbar-menu-button span:after {
+  background-color: white;
+  display: block;
+  height: 4px;
+  width: 24px;
+}
+
+.navbar-menu-button span:before {
+  margin-top: -9px;
+}
+
+.navbar-menu-button span:after {
+  margin-top: 9px;
+}
+
+.turn-to-x span {
+  transition: margin 0s 0.2s, transform 0s 0.2s;
+}
+
+.turn-to-x.close span {
+  background-color: rgba(0,0,0,0.0);
+  transition: margin 0s 0.2s, transform 0s 0.2s;
+}
+
+.turn-to-x span:before {
+  transition: margin 0.2s 0.2s, transform 0.2s 0s;
+}
+
+.turn-to-x.close span:before {
+  margin-top: 0;
+  transform: rotate(45deg);
+  transition: margin 0.2s 0s, transform 0.2s 0.2s;
+}
+
+.turn-to-x span:after {
+  transition: margin 0.2s 0.2s, transform 0.2s 0s;
+}
+
+.turn-to-x.close span:after {
+  margin-top: 0;
+  transform: rotate(-45deg);
+  transition: margin 0.2s 0s, transform 0.2s 0.2s;
+}

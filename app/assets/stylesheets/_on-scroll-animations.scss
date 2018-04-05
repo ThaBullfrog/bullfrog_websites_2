@@ -1,0 +1,102 @@
+.dont-animate-yet {
+  -webkit-animation: none !important;
+  visibility: hidden;
+}
+
+.animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.animated-parent {
+  .animated-child {
+    animation-play-state: paused;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1);
+    transform: scale3d(.1, .1, .1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation-name: zoom-in;
+  animation-timing-function: ease-in;
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in-left {
+  animation-name: fade-in-left;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in-right {
+  animation-name: fade-in-right;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in-up {
+  animation-name: fade-in-up;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-in-down {
+  animation-name: fade-in-down;
+  animation-timing-function: ease-out;
+}

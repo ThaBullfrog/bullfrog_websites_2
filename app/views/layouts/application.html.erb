@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BullfrogWebsites2</title>
+    <title>Bullfrog Websites</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link 
+      href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,900" 
+      rel="stylesheet"
+    >
+    <%= stylesheet_link_tag(
+      'application',
+      media: 'all',
+      'data-turbolinks-track': 'reload'
+    ) %>
+    <%= javascript_include_tag(
+      'application',
+      'data-turbolinks-track': 'reload'
+    ) %>
   </head>
-
   <body>
+    <div class="attention-background"><div class="navbar container unpadded">
+      <a class="brand" href="index.html">Bullfrog Websites</a>
+      <a id="navbar-button" href="#" class="navbar-menu-button turn-to-x" data-collapsed="true">
+        <span></span>
+      </a>
+      <ul id="navbar-collapse">
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div></div>
     <%= yield %>
   </body>
 </html>

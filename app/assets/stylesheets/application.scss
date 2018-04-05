@@ -1,0 +1,155 @@
+@import "ibm-colors";
+@import "animated-menu-icon";
+@import "on-scroll-animations";
+@import "variables";
+
+/* Global */
+
+html, body {
+  color: $text-color;
+  font-family: $default-font;
+  line-height: 1.48;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $link-color;
+}
+
+a:visited {
+  color: inherited;
+}
+
+p, h1, h2, h3, h4, h5, h6, ol, ul {
+  margin: $default-margin 0 0 0;
+}
+
+.container {
+  box-sizing: border-box;
+  margin: -1px ($default-margin - 1px) 0 ($default-margin - 1px);
+  max-width: none;
+  padding: 1px 1px 1em 1px;
+  @media screen and (min-width: ($container-max-width + ($default-margin + 7px) * 2)) {
+    margin: -1px auto 0 auto;
+    max-width: $container-max-width;
+  }
+}
+
+.unpadded {
+  padding: 0;
+}
+
+.attention-background {
+  background: $primary-color;
+  color: white;
+}
+
+.footer-background {
+  background: $footer-color;
+  box-shadow: 0px 500px 0px 500px $footer-color;
+  color: white;
+  a {
+    color: color-tint($link-color, 20);
+  }
+}
+
+/* Navbar */
+
+.brand {
+  color: white;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: $navbar-height;
+  text-decoration: none;
+}
+
+.navbar-menu-button {
+  float: right;
+  margin-left: 1em;
+  margin-top: (($navbar-height / 2) - 12px);
+  @media screen and (min-width: $phone-max-width) {
+    display: none;
+  }
+}
+
+.navbar {
+  @media screen and (min-width: $phone-max-width) {
+    height: 50px;
+  }
+  ul {
+    height: 0;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: height 0.5s;
+    @media screen and (min-width: $phone-max-width) {
+      float: right;
+      height: $navbar-height !important;
+      transition: none;
+    }
+    li {
+      line-height: $navbar-height;
+      font-weight: 900;
+      margin-left: 1em;
+      @media screen and (min-width: $phone-max-width) {
+        display: inline-block;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        &:hover, &:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Grid */
+
+.column {
+  @media screen and (min-width: $phone-max-width) {
+    flex: 1 1 0;
+    margin-right: 1em;
+  }
+}
+
+.text-column {
+  max-width: $text-max-width;
+  @media screen and (min-width: $min-viewport-width-for-sidebar) {
+    flex: 0 2 $text-max-width;
+    margin-right: 16px;
+  }
+}
+
+.sidebar-column {
+  max-width: $text-max-width;
+  @media screen and (min-width: $min-viewport-width-for-sidebar) {
+    flex: 1 1 296px;
+  }
+}
+
+.row {
+  @media screen and (min-width: $phone-max-width) {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    :last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.right-when-column {
+  @media screen and (min-width: $phone-max-width) {
+    text-align: right;
+  }
+}
