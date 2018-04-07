@@ -13,6 +13,10 @@ html, body {
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   color: $link-color;
 }
@@ -34,7 +38,7 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
 
 .button-link {
   border-radius: 100px;
-  border: 2px solid;
+  border: 2px solid white;
   color: white;
   display: block;
   font-weight: bold;
@@ -180,7 +184,7 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
   display: flex;
   height: 100vh;
   justify-content: center;
-  span {
+  div {
     color: white;
     padding: 0 $default-margin;
     font-size: 2em;
