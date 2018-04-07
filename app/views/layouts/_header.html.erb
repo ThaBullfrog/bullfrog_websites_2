@@ -1,9 +1,9 @@
 <header id="bg-on-expand" class="top">
   <div class="navbar container unpadded">
-    <%= link_to root_path, class: "brand" do %>
+    <%= link_to root_path do %>
       <%= image_tag 'logo.svg', class: 'logo', alt: 'Logo' %>
-      Bullfrog Websites
     <% end %>
+    <%= link_to 'Bullfrog Websites', root_path, class: "brand" %>
     <a
       id="navbar-button"
       href="#"
