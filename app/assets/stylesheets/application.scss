@@ -56,6 +56,13 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
 
 /* Navbar */
 
+.logo {
+  box-sizing: border-box;
+  float: left;
+  height: $navbar-height;
+  padding: 8px 8px 8px 0;
+}
+
 .brand {
   color: white;
   display: inline-block;
@@ -85,6 +92,7 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
     overflow: hidden;
     padding: 0;
     transition: height 0.5s;
+    transition-timing-function: linear;
     @media screen and (min-width: $phone-max-width) {
       float: right;
       height: $navbar-height !important;
@@ -104,6 +112,71 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
           text-decoration: underline;
         }
       }
+    }
+  }
+}
+
+#bg-on-expand:before {
+  background: $primary-color;
+  content: "";
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition-timing-function: linear;
+  transition: opacity 0.2s;
+  width: 100%;
+  z-index: -1;
+}
+
+#bg-on-expand.expanded:before {
+  opacity: 1;
+  transition-timing-function: linear;
+  transition: opacity 0.2s;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Hero */
+
+.hero {
+  align-items: center;
+  //background-attachment: fixed;
+  background-image: image-url('smore.jpg');
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  span {
+    color: white;
+    padding: 0 $default-margin;
+    font-size: 2em;
+    font-weight: 900;
+    max-width: 700px;
+    text-align: center;
+    @media screen and (min-width: $phone-max-width) {
+      font-size: 4em;
+    }
+  }
+  &::after {
+    border: 16px solid;
+    border-color: #fff transparent transparent;
+    bottom: 16px;
+    color: white;
+    content: "";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    width: 0;
+    @media screen and (min-width: $phone-max-width) {
+      border-width: 24px;
     }
   }
 }

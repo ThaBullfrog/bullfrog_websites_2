@@ -17,23 +17,31 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  var navBarbutton = document.querySelector('#navbar-button');
+  var navbarButton = document.querySelector('#navbar-button');
+  var backgroundOnExpand = document.querySelector('#bg-on-expand');
 
-  if(navBarbutton != null) {
+  if(navbarButton != null) {
     function collapseSection(element) {
       element.style.height = null;
-      navBarbutton.setAttribute('data-collapsed', 'true');
+      navbarButton.setAttribute('data-collapsed', 'true');
+      if (backgroundOnExpand) {
+        setTimeout(function() {
+          backgroundOnExpand.classList.remove('expanded');
+        }, 300);
+      }
     }
 
     function expandSection(element) {
-      var sectionHeight = element.scrollHeight;
-      element.style.height = sectionHeight + 'px';
-      navBarbutton.setAttribute('data-collapsed', 'false');
+      element.style.height = element.scrollHeight + 'px';
+      navbarButton.setAttribute('data-collapsed', 'false');
+      if (backgroundOnExpand) {
+        backgroundOnExpand.classList.add('expanded');
+      }
     }
 
-    navBarbutton.addEventListener('click', function(e) {
+    navbarButton.addEventListener('click', function(e) {
       var section = document.querySelector('#navbar-collapse');
-      var isCollapsed = navBarbutton.getAttribute('data-collapsed') === 'true';
+      var isCollapsed = navbarButton.getAttribute('data-collapsed') === 'true';
       $('#navbar-button').toggleClass('close');
       if(isCollapsed) {
         expandSection(section);

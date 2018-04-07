@@ -35,7 +35,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails', '~> 4.3'
 
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '~> 8.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
