@@ -1,4 +1,11 @@
-<header id="bg-on-expand" class="top">
+<header 
+  <% if @header_transparent %>
+    id="bg-on-expand" 
+    class="top"
+  <% else %>
+    class="attention-background"
+  <% end %>
+>
   <div class="navbar container unpadded">
     <%= link_to root_path do %>
       <%= image_tag 'logo.svg', class: 'logo', alt: 'Logo' %>
@@ -14,10 +21,8 @@
     </a>
     <ul id="navbar-collapse">
       <li><%= link_to 'Home', root_path %></li>
-      <li><a href="index.html">Link 2</a></li>
-      <li><a href="index.html">Link 3</a></li>
-      <li><a href="index.html">Link 4</a></li>
-      <li><a href="index.html">Link 5</a></li>
+      <li><%= link_to 'Work', work_path %></li>
+      <li><%= link_to 'Contact', contact_path %></li>
     </ul>
   </div>
 </header>
