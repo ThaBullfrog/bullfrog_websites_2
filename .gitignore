@@ -28,3 +28,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Don't put .env under version control
+.env

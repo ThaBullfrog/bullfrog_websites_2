@@ -1,17 +1,17 @@
 <% @title = 'Work' %>
-<div class="content">
-  <div class="container">
-    <h1>My past work</h1>
-    <div class="showcase">
-      <a href="https://pennsylvaniasandwichcompany.com" class="item">
-        <%= image_tag 'pa_sandwich_company.jpg' %>
-        <div class="overlay"></div>
-        <h2>Pennsylvania Sandwich Company</h2>
-      </a>
-    </div>
+<div class="container">
+  <h1>My past work</h1>
+  <div class="showcase">
+    <a href="https://pennsylvaniasandwichcompany.com" class="item">
+      <%= image_tag 'pa_sandwich_company.jpg' %>
+      <div class="overlay"></div>
+      <h2>Pennsylvania Sandwich Company</h2>
+    </a>
   </div>
 </div>
-<div class="dark-background"><div class="container center">
-  <h2>Ready to get started?</h2>
-  <%= link_to 'Get a quote', contact_path, class: 'button-link attention' %>
-</div></div>
+<%= content_for :footer do %>
+  <div class="dark-background"><div class="container center">
+    <h2>Ready to get started?</h2>
+    <%= link_to 'Get a quote', contact_path, class: 'button-link attention' %>
+  </div></div>
+<% end %>

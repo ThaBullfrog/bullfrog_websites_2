@@ -100,6 +100,54 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
   }
 }
 
+label {
+  display: block;
+  margin-top: $default-margin;
+}
+
+input[type=text], textarea {
+  border-radius: 4px;
+  border: 1px solid color('gray', 30);
+  box-sizing: border-box;
+  display: block;
+  font-family: $default-font;
+  font-size: 1em;
+  margin: 0;
+  margin-top: 3px;
+  padding: 10px 5px;
+  width: 100%;
+}
+
+input[type=submit] {
+  appearance: button;
+  background: $primary-color;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  padding: 10px;
+  width: 100%;
+  &:hover, &:active {
+    background: $primary-color-dark;
+  }
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+
+/* reCAPTCHA fix */
+
+.g-recaptcha {
+  @media screen and (max-width: $phone-max-width) {
+    transform: scale(0.77);
+    transform-origin: 0 0;
+  }
+}
+
 /* Navbar */
 
 .logo {
@@ -299,6 +347,27 @@ p, h1, h2, h3, h4, h5, h6, ol, ul {
 .right-when-column {
   @media screen and (min-width: $phone-max-width) {
     text-align: right;
+  }
+}
+
+/* Alerts */
+
+.alert {
+  margin-top: $default-margin;
+  padding: 10px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  &.alert-danger {
+    background: color('red', 10);
+    order-color: color('red', 70);
+    color: color('red', 70);
+  }
+  &.alert-success {
+    background: color('green', 1);
+    border-color: color('green', 70);
+    color: color('green', 70);
   }
 }
 

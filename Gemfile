@@ -45,7 +45,10 @@ group :development, :test do
   gem 'capistrano-passenger', '~> 0.2', require: false
   gem 'capistrano-rvm', '~> 0.1', require: false
   gem 'capistrano-bundler', '~> 1.3', require: false
+  gem 'dotenv-rails', '~> 2.2', require: 'dotenv/rails-now'
 end
+
+gem 'recaptcha', '~> 4.8', require: 'recaptcha/rails' # Must load after dotenv
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

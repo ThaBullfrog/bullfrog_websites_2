@@ -1,0 +1,37 @@
+<% @title = "Contact" %>
+<div class="container">
+  <div class="row">
+    <div class="text-column hidden-overflow">
+      <h1>Contact</h1>
+      <p>
+        Jeremiah Kellick<br>
+        jeremiahkellick@gmail.com<br>
+        +1 (814) 573-7139
+      </p>
+      <%= form_for(@quote_request, url: contact_path) do |f| %>
+        <% if @quote_request.errors.any? %>
+          <%= show_errors @quote_request.errors.full_messages %>
+        <% end %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.label(
+          :website,
+          "Optional: Enter the link to your current website."
+        ) %>
+        <%= f.text_field :website %>
+        <%= f.label(
+          :description,
+          "Provide a description of what you want."
+        ) %>
+        <%= f.text_area :description, rows: 4 %>
+        <%= f.label :budget, "Project budget" %>
+        <%= f.text_field :budget %>
+        <p></p>
+        <%= recaptcha_tags %>
+        <p><%= f.submit "Send quote request." %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

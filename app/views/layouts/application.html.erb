@@ -22,6 +22,14 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <div class="content">
+      <% unless flash.empty? %>
+        <div class="container">
+          <%= show_flashes %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= yield :footer %>
   </body>
 </html>
