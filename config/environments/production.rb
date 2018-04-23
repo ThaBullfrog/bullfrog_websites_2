@@ -92,5 +92,19 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.action_mailer.raise_delivery_errors = true                                                                                                                                                   
+  config.action_mailer.delivery_method = :smtp                                     
+  host = 'bullfrogwebsites.com'                                                    
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }  
+  ActionMailer::Base.smtp_settings = {                                             
+    :address        => 'smtp.gmail.com',                                           
+    :port           => '587',                                                      
+    :domain         => 'gmail.com',                                                
+    :user_name      => 'bullfrogwebsitesbot@gmail.com',                            
+    :password       => ENV['BULLFROGWEBSITES_GMAIL_PASSWORD'],                     
+    :authentication => :plain,                                                     
+    :enable_starttls_auto => true                                                  
+  }
+
   config.action_controller.relative_url_root = '/redesign'
 end
