@@ -101,7 +101,7 @@ Rails.application.configure do
     :port           => '587',                                                      
     :domain         => 'gmail.com',                                                
     :user_name      => 'bullfrogwebsitesbot@gmail.com',                            
-    :password       => ENV['BULLFROGWEBSITES_GMAIL_PASSWORD'],                     
+    :password       => ENV['BULLFROG_WEBSITES_GMAIL_PASSWORD'],                     
     :authentication => :plain,                                                     
     :enable_starttls_auto => true                                                  
   }
