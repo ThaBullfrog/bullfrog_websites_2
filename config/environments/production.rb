@@ -106,5 +106,5 @@ Rails.application.configure do
     :enable_starttls_auto => true                                                  
   }
 
-  config.action_controller.relative_url_root = '/redesign'
+  config.action_controller.relative_url_root = '/'
 end
