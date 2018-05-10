@@ -282,6 +282,7 @@ input[type=submit] {
 
 .column {
   width: 100%;
+  flex: 0 1 100%;
   @media screen and (min-width: $phone-max-width) {
     flex: 1 1 0;
     margin-right: ($default-margin * 2);
@@ -297,6 +298,7 @@ input[type=submit] {
 
 .text-column {
   max-width: $text-max-width;
+  flex: 0 1 100%;
   @media screen and (min-width: $min-viewport-width-for-sidebar) {
     flex: 0 2 $text-max-width;
     margin-right: ($default-margin * 2);
@@ -305,6 +307,7 @@ input[type=submit] {
 
 .sidebar-column {
   max-width: $text-max-width;
+  flex: 0 1 100%;
   @media screen and (min-width: $min-viewport-width-for-sidebar) {
     flex: 1 1 296px;
   }

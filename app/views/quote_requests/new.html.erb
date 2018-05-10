@@ -1,4 +1,8 @@
 <% @title = "Contact" %>
+<% @description = (
+  'Contact me at jeremiahkellick@gmail.com or ' \
+  '+1 (814) 573-7139'
+) %>
 <div class="container">
   <div class="row">
     <div class="text-column hidden-overflow">
@@ -8,6 +12,7 @@
         jeremiahkellick@gmail.com<br>
         +1 (814) 573-7139
       </p>
+      <h2>Quote form</h2>
       <%= form_for(@quote_request, url: contact_path) do |f| %>
         <% if @quote_request.errors.any? %>
           <%= show_errors @quote_request.errors.full_messages %>
